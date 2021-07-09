@@ -1,22 +1,18 @@
-LinkedListNode nthToLast(LinkedListNode head, int n) {
-  if (head == null || n < 1) {
-    return null;
-  }
+Node getNodeFromTail(Node head, int x)
+{
+    Node p = head;
+    Node q = head;
 
-  LinkedListNode p1 = head;
-  LinkedListNode p2 = head;
+    int diff = 0;
 
-  for (int j = 0; j < n - 1; ++j) { // skip n-1 steps ahead
-    if (p2 == null) {
-      return null; // not found since list size < n
+    while (p.next != NULL)
+    {
+        p = p.next;
+
+        if (diff >= x)
+            q = q.next;
+        else
+            diff++;
     }
-    p2 = p2.next;
-  }
-
-  while (p2.next != null) {
-    p1 = p1.next;
-    p2 = p2.next;
-  }
-
-  return p1;
+    return q;
 }
