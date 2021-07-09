@@ -1,0 +1,29 @@
+The 2-pointer solution doesn't fit your requirements as it traverses the list twice.
+
+
+To find the kth from last item...
+
+A better (single-traversal) solution - Circular buffer:
+-------------------------------------------------------
+
+Uses O(k) extra memory.
+
+Have an array of length k.
+
+For each element, insert at the next position into the array (with wrap-around).
+
+At the end, just return the item at the next position in the array.
+
+2-pointer solution:
+-------------------
+
+Traverses the list twice, but uses only O(1) extra memory.
+
+Start p1 and p2 at the beginning.
+
+Increment p1 k times.
+
+while p1 is not at the end
+     increment p1 and p2
+
+p2 points to the kth from last element.
