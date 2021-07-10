@@ -1,4 +1,5 @@
 
+#include <stdio.h>
 
 int find_max(int array[], int len)
 {
@@ -11,4 +12,13 @@ int find_max(int array[], int len)
   }
   
   return max;
+}
+
+
+int main()
+{
+  int array[] = { 2, 3, 4, 9, 6, 6, 7};
+
+  printf("max = %d\n", find_max(array, 7));
+  return 0;
 }
